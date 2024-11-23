@@ -1,0 +1,57 @@
+GET http://localhost:4000/ping
+
+
+
+### Get all events
+GET http://localhost:4000/events
+### Get event by id
+GET http://localhost:4000/events/evento-fullstack
+### Validate alias
+GET http://localhost:4000/events/validate/evento-fullstack/1e7b1d8e-4d1b-4b5d-9f8e-1a2b3c4d5e6f
+
+### Call access event
+POST http://localhost:4000/events/access
+Content-Type: application/json
+
+{
+    "id": "1e7b1d8e-4d1b-4b5d-9f8e-1a2b3c4d5e6f",
+    "password": "password1233"
+}
+### Save guest
+POST http://localhost:4000/events/save-guest/evento-fullstack
+Content-Type: application/json
+
+{
+   "id": "3e7b1d8e-4d1b-4b5d-9f8e-1a2b3c4d5e6g",
+    "name": "Alisson",
+    "email": "alisso@gmail.com",
+    "confirmed": true,
+    "hasPlusOne": true,
+    "qtdPlusOne": 3
+}
+### Save event
+POST http://localhost:4000/events
+Content-Type: application/json
+
+{
+    "id": "3e7b1d8e-4d1b-4b5d-9f8e-1a2b3c4d5e4r",
+    "alias": "novo-evento",
+    "password": "password123",
+    "name": "Evento Novo",
+    "date": "2021-12-31T00:00",
+    "location": "Maceió, AL",
+    "description": "novo evento teste",
+    "image": "https://play-lh.googleusercontent.com/1e7b1d8e-4d1b-4b5d-9f8e-1a2b3c4d5e6",
+    "backgroundImage": "https://play-lh.googleusercontent.com/1e7b1d8e-4d1b-4b5d-9f8e-1a2b3c4d5e6",
+    "expectedParticipants": 100,
+    "guests": [{
+        "id": "8e7b1d8e-4d1b-4b5d-9f8e-1a2b3c4d5e6f",
+        "name": "string",
+        "email": "alisso@gmail.com",
+        "confirmed": true,
+        "hasPlusOne": true,
+        "qtdPlusOne": 1
+    }]
+
+}
+
